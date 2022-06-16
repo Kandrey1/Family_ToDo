@@ -1,0 +1,29 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+    <div>
+        <h1 class="title__todo"> {{ user.username }} у Вас следующий список незавершенных дел:</h1>
+    </div>
+    <div class="todo__form__add">
+        <form class="todo__form__input" action="#" method="post">
+            {% csrf_token %}
+            <div class="todo__delete__rows">
+                <button class="todo__reset" name="todo_reset">Сбросить выделение</button>
+                <button class="todo__save" name="todo_save">Сохранить выделенное</button>
+                <button class="todo__delete" name="todo_delete">Удалить выделенное</button>
+            </div>
+            <br>
+            <div class="product__add">
+                <input class="todo__input" type="text" name="todo" value="" placeholder="Напишите, что вы планируете сделать"/>
+                <button class="button__add__todo" name="todo_add">Добавить</button>
+            </div>
+            <div class="todo__all__list">
+                <ol class="todo__list">
+                    {% for t in todos %}
+                        <li class="todo__item"> <label> <input type="checkbox" name="checkedbox" value="{{ t.pk }}" {% if t.check%} checked {% endif%}> <span class="pseudocheckbox">{{ t.title }}</span> </label> </li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </form>
+    </div>
+{% endblock %}

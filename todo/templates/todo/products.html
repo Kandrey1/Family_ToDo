@@ -1,0 +1,30 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+    <div>
+        <h1 class="title__products"> Список: {{ title_list }}</h1>
+    </div>
+    <div class="product__form__add">
+        <form class="product__form__input" action="#" method="post">
+            {% csrf_token %}
+            <div class="product__delete__rows">
+                <button class="button__reset__select" name="product_reset">Сбросить выделение</button>
+                <button class="button__save__buy" name="product_save">Сохранить выделенное</button>
+                <button class="button__delete__products" name="product_delete">Удалить выделенное</button>
+            </div>
+            <br>
+            <div class="product__add">
+                <input class="product__input" type="text" name="product" value="" placeholder="Напишите, что вы хотите купить"/>
+                <button class="button__add__product" name="product_add">Добавить</button>
+            </div>
+            <div class="product__all__list">
+                <ol class="product__list">
+                    {% for p in products %}
+                        <li class="product__item"> <label> <input type="checkbox" name="checkedbox" value="{{ p.pk }}" {% if p.check%} checked {% endif%}> <span class="pseudocheckbox">{{ p.buy }}</span> </label> </li>
+
+                    {% endfor %}
+                </ol>
+            </div>
+        </form>
+    </div>
+{% endblock %}

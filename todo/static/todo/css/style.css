@@ -1,0 +1,384 @@
+/*Обнуление*/
+*{padding: 0;margin: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------*/
+.body{
+	color: #444;
+}
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+/*--------------------- HEADER start -----------------------------------------------------------------------*/
+.header {
+}
+.header__container {
+    background-color: #DCDCDC;
+    display: flex;
+    min-height: 80px;
+    align-items: center;
+    max-width: 800px;
+    padding: 0px 15px;
+    margin: 0px auto;
+}
+/*---------------------------------------------------*/
+.header__logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: red;
+}
+/*---------------------------------------------------*/
+.header__menu{
+    margin: 0px 0px 0px 80px;
+}
+.menu__list {
+    display: flex;
+}
+.menu__item:not(:last-child) {
+    margin: 0px 20px 0px 0px;
+}
+.menu__link {
+    color: #000;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 34px;
+}
+/*---------------------------------------------------*/
+.enter {
+    margin: 0px 0px 0px 200px;
+}
+.enter__list {
+    display: flex;
+}
+.enter__item {
+}
+.enter__link {
+    color: grey;
+    font-size: 16px;
+    font-weight: 400;
+}
+/*--------------------- HEADER end -----------------------------------------------------------------------*/
+/*-----------------------MAIN start -----------------------------------------------------------------------*/
+.main__container {
+    background-color: #DCDCDC;
+    max-width: 800px;
+    padding: 0px 15px;
+    margin: 0px auto;
+}
+/*---------------------------------------------------*/
+.personal__menu {
+    margin: 0px 0px 30px 0px;
+}
+.personal__menu__list {
+    display: flex;
+}
+.personal__menu__item:not(:last-child) {
+    margin: 0px 60px 0px 0px;
+}
+.personal__menu__item {
+}
+.personal__menu__link {
+    color: #800080;
+    font-size: 20px;
+    font-weight: 400;
+}
+/*------------PRODUCT FORM start ---------------------------------------*/
+.title__products {
+    font-size: 24px;
+    margin: 0px 0px 20px 10px;
+}
+.product__form__add {
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+    margin: 0px 0px 20px 0px;
+}
+.product__form__input {
+}
+.product__delete__rows {
+    margin: 0px 0px 10px 0px;
+}
+.button__reset__select {
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+    margin: 0px 0px 0px 10px;
+}
+.button__delete__products {
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+    margin: 0px 0px 0px 100px;
+}
+.button__save__buy {
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+    margin: 0px 0px 0px 30px;
+}
+/*----------------------------------------*/
+.product__add {
+    display: flex;
+}
+.product__input {
+    display: block;
+    width: 80%;
+    height: 30px;
+    padding: 5px 5px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+}
+.button__add__product {
+    margin: 0px 0px 0px 20px;
+}
+/*----------------------------------------*/
+.product__all__list {
+    margin: 0px 0px 0px 20px;
+}
+.product__list {
+}
+.product__item {
+    margin: 10px 0px 10px 0px;
+}
+.product__item {
+}
+input[type=checkbox] { display: none; }
+.pseudocheckbox::before {
+    content: "\00A0";
+    display: inline-block;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid #B0B0B0;
+    border-radius: 2px;
+    margin-right: 6px;
+    vertical-align: baseline;
+
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+    color: #808080;
+}
+input[type=checkbox]:checked + .pseudocheckbox::before { content: "\2713";}
+input[type=checkbox]:checked + .pseudocheckbox {text-decoration: line-through;}
+.pseudocheckbox {
+    font-size: 24px;
+}
+/*------------PRODUCT FORM end ---------------------------------------*/
+/*------------ LISTS PRODUCTS FORM start ---------------------------------------*/
+.title__lists {
+    font-size: 24px;
+    margin: 0px 0px 20px 10px;
+}
+.lists__form__add {
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+    margin: 0px 0px 20px 0px;
+}
+.lists__form__input {
+}
+/*----------------------------------------*/
+.lists__add {
+    display: flex;
+    margin: 0px 0px 20px 0px;
+}
+.lists__input {
+    display: block;
+    width: 80%;
+    height: 30px;
+    padding: 5px 5px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+}
+.button__create__list {
+    margin: 0px 0px 0px 20px;
+}
+/*----------------------------------------*/
+.list__all {
+    margin: 0px 0px 0px 20px;
+}
+.list__list {
+}
+.list__item {
+    font-size: 24px;
+    margin: 10px 0px 10px 20px;
+}
+/*------------ LISTS PRODUCTS FORM end ---------------------------------------*/
+/*-----------------------MAIN end -----------------------------------------------------------------------*/
+
+/*================== АВТОРИЗАЦИЯ ============================*/
+.form_auth_block{
+    width: 400px;
+    height: 200px;
+    margin: 0;
+    background-size: cover;
+    border-radius: 4px;
+}
+.form_auth_block_content{
+  padding-top: 10%;
+}
+.form_auth_block input{
+  display: block;
+  width: 80%;
+  height: 35px;
+  border-radius: 5px;
+  border:none;
+  outline: none;
+}
+input:focus {
+  color: #000000;
+  border-radius: 5px;
+  border: 2px solid #436fea;
+}
+.form_auth_button{
+    display: block;
+    width: 80%;
+    margin-top: 15px;
+    border-radius: 15px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+}
+/*================== АВТОРИЗАЦИЯ ============================*/
+/*================== РЕГИСТРАЦИЯ ============================*/
+.form_reg_block{
+    width: 400px;
+    height: 300px;
+    margin: 0;
+    background-size: cover;
+    border-radius: 4px;
+}
+.form_reg_block_content{
+  padding-top: 10%;
+}
+.form_reg_block input{
+  display: block;
+  width: 80%;
+  height: 35px;
+  border-radius: 5px;
+  border:none;
+  outline: none;
+}
+input:focus {
+  color: #000000;
+  border-radius: 5px;
+  border: 2px solid #436fea;
+}
+.form_reg_button{
+    display: block;
+    width: 80%;
+    margin-top: 15px;
+    border-radius: 15px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+}
+/*================== РЕГИСТРАЦИЯ ============================*/
+
+/*------------------------*/
+.index__text {
+    font-size: 24px;
+}
+.about__text {
+    font-size: 24px;
+}
+/*-------------------------*/
+/*++++++++++++++++++++++++++++++++++++ _todo +++++++++++++++++++++++++*/
+.title__todo {
+    font-size: 24px;
+    margin: 0px 0px 20px 10px;
+}
+.todo__form__add {
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+    margin: 0px 0px 20px 0px;
+}
+.todo__form__input {
+}
+.todo__delete__rows {
+    margin: 0px 0px 10px 0px;
+}
+.todo__reset {
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+    margin: 0px 0px 0px 10px;
+}
+.todo__delete {
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+    margin: 0px 0px 0px 100px;
+}
+.todo__save {
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+    margin: 0px 0px 0px 30px;
+}
+/*----------------------------------------*/
+.todo__add {
+    display: flex;
+}
+.todo__input {
+    display: block;
+    width: 80%;
+    height: 30px;
+    padding: 5px 5px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+}
+.button__add__todo {
+    margin: 0px 0px 0px 20px;
+}
+/*----------------------------------------*/
+.todot__all__list {
+    margin: 0px 0px 0px 20px;
+}
+.todo__list {
+}
+.todo__item {
+    margin: 10px 0px 10px 0px;
+}
+.todo__item {
+}
+/*++++++++++++++++++++++++++++++++++++ _todo +++++++++++++++++++++++++*/

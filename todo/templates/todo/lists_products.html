@@ -1,0 +1,25 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+    <div>
+        <h1 class="title__lists"> Списки покупок: </h1>
+    </div>
+    <div class="lists__form__add">
+        <form class="lists__form__input" action="#" method="post">
+            {% csrf_token %}
+            <br>
+            <div class="lists__add">
+                <input class="lists__input" type="text" name="list" value="" placeholder="Напишите, какой список вы хотите создать"/>
+                <button class="button__create__list" name="lists_create">Создать</button>
+            </div>
+            <div class="lists__all">
+                <ol class="list__list">
+                    {% for list in lists %}
+                    <li class="list__item"><a href="{{ list.get_absolute_url }}">{{ list.name_list }}</a></li>
+                    <button class="button__del__list" name="del_list" value="{{list.pk}}">Удалить</button>
+                    {% endfor %}
+                </ol>
+            </div>
+        </form>
+    </div>
+{% endblock %}

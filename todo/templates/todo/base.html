@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Семейный список дел</title>
+    <link type="text/css" href="{% static 'todo/css/style.css' %}" rel="stylesheet">
+</head>
+<body class="body">
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container">
+                    <a href="{% url 'home' %}" class="header__logo">LOGO</a>
+                    <nav class="header__menu">
+                        <ul class="menu__list">
+                            <li class="menu__item">
+                                <a href="{% url 'home' %}" class="menu__link">Главная</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="{% url 'about' %}" class="menu__link">О сайте</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="enter">
+                        {% if request.user.is_authenticated %}
+                            <ul class="enter__list">
+                                <li class="enter__item"> <a href="{% url 'personal_account' %}" class="enter__link">Личный кабинет |</a></li>
+                                <li class="enter__item"> <a href="{% url 'logout' %}" class="enter__link">| Выйти</a></li>
+                            </ul>
+                        {% else %}
+                            <ul class="enter__list">
+                                <li class="enter__item"><a href="{% url 'register' %}" class="enter__link">Регистрация |</a></li>
+                                <li class="enter__item"><a href="{% url 'login' %}" class="enter__link">| Войти</a></li>
+                            </ul>
+                        {% endif %}
+                    </div>
+            </div>
+        </header>
+        <main class="main__container">
+            {% if request.user.is_authenticated %}
+                <div class="personal__menu">
+                    <ul class="personal__menu__list">
+                        <li class="personal__menu__item"><a href="{% url 'todo' %}" class="personal__menu__link">Список дел</a></li>
+                        <li class="personal__menu__item"><a href="{% url 'lists_products' %}" class="personal__menu__link">Списки покупок</a></li>
+                    </ul>
+                </div>
+            {% endif %}
+
+            {% block content %}
+            {% endblock %}
+
+        </main>
+    </div>
+</body>
+</html>
