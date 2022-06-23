@@ -8,7 +8,9 @@ Python 3.7.5, Django 3.2.13
 
 ## Установка
 
-Скопировать репозиторий и запустить manage.py
+Скопировать репозиторий и после установки пакета django-autoslug запустить manage.py
+
+`pip install django-autoslug`
 
 `python manage.py runserver`
 
